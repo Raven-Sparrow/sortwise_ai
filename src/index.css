@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-pine-900 text-paper font-body antialiased;
+    background-image:
+      radial-gradient(ellipse 900px 500px at 15% -10%, rgba(140,198,63,0.10), transparent 60%),
+      radial-gradient(ellipse 700px 500px at 90% 10%, rgba(47,168,217,0.08), transparent 60%);
+  }
+  ::selection {
+    background-color: rgba(140,198,63,0.4);
+  }
+  :focus-visible {
+    outline: 2px solid #8CC63F;
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  .belt-texture {
+    background-image: repeating-linear-gradient(
+      -35deg,
+      rgba(241,239,231,0.06) 0px,
+      rgba(241,239,231,0.06) 2px,
+      transparent 2px,
+      transparent 14px
+    );
+  }
+  .noise-card {
+    background-color: #16241F;
+    background-image: radial-gradient(rgba(241,239,231,0.035) 1px, transparent 1px);
+    background-size: 3px 3px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
