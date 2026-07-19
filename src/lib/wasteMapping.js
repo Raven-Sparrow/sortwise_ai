@@ -43,30 +43,38 @@ export const CATEGORIES = {
 const KEYWORD_RULES = [
   // Recyclable — dry, non-organic, commonly processed materials
   { keywords: ['bottle', 'pop_bottle', 'water_bottle', 'beer_bottle', 'wine_bottle', 'jar', 'jug'], category: 'recyclable', weight: 1.0 },
-  { keywords: ['can', 'tin', 'pop can', 'beer_glass'], category: 'recyclable', weight: 0.9 },
-  { keywords: ['carton', 'cardboard', 'box', 'crate'], category: 'recyclable', weight: 0.95 },
-  { keywords: ['newspaper', 'envelope', 'binder', 'notebook', 'book_jacket', 'comic_book', 'paper_towel'], category: 'recyclable', weight: 0.85 },
+  { keywords: ['can', 'tin', 'pop can', 'beer_glass', 'goblet', 'wineglass'], category: 'recyclable', weight: 0.9 },
+  { keywords: ['carton', 'cardboard', 'box', 'crate', 'packet'], category: 'recyclable', weight: 0.95 },
+  { keywords: ['newspaper', 'envelope', 'binder', 'notebook', 'book_jacket', 'comic_book', 'paper_towel', 'magazine'], category: 'recyclable', weight: 0.85 },
   { keywords: ['plastic_bag', 'shopping_basket', 'milk_can'], category: 'recyclable', weight: 0.8 },
-  { keywords: ['pitcher', 'beaker', 'measuring_cup', 'water_jug'], category: 'recyclable', weight: 0.7 },
+  { keywords: ['pitcher', 'beaker', 'measuring_cup', 'water_jug', 'teapot', 'vase'], category: 'recyclable', weight: 0.7 },
+  { keywords: ['frying_pan', 'wok', 'pot', 'ladle', 'spatula', 'whisk', 'tray', 'plate', 'bowl'], category: 'recyclable', weight: 0.65 },
+  { keywords: ['scissors', 'ruler', 'hammer', 'wrench', 'pliers', 'screw', 'nail'], category: 'recyclable', weight: 0.6 },
+  { keywords: ['bucket', 'barrel', 'soap_dispenser', 'lotion', 'perfume'], category: 'recyclable', weight: 0.55 },
 
   // Compost — organic / food matter
   { keywords: ['banana', 'orange', 'lemon', 'fig', 'pineapple', 'pomegranate', 'strawberry', 'custard_apple', 'jackfruit', 'apple'], category: 'compost', weight: 1.0 },
   { keywords: ['mushroom', 'corn', 'cucumber', 'artichoke', 'zucchini', 'bell_pepper', 'cardoon', 'broccoli', 'cauliflower', 'head_cabbage'], category: 'compost', weight: 1.0 },
-  { keywords: ['eggnog', 'trifle', 'guacamole', 'potpie', 'meat_loaf', 'hotdog', 'pizza', 'burrito'], category: 'compost', weight: 0.55 },
-  { keywords: ['plate', 'tray'], category: 'compost', weight: 0.25 },
+  { keywords: ['acorn_squash', 'butternut_squash', 'spaghetti_squash', 'acorn', 'chestnut'], category: 'compost', weight: 0.95 },
+  { keywords: ['eggnog', 'trifle', 'guacamole', 'potpie', 'meat_loaf', 'hotdog', 'pizza', 'burrito', 'bagel', 'pretzel'], category: 'compost', weight: 0.75 },
+  { keywords: ['cheeseburger', 'mashed_potato', 'dough', 'French_loaf', 'egg'], category: 'compost', weight: 0.7 },
 
   // Hazardous — e-waste, batteries, medical, chemical
   { keywords: ['cellular_telephone', 'iPod', 'remote_control', 'laptop', 'notebook_computer', 'desktop_computer', 'hard_disc', 'modem', 'joystick', 'monitor', 'projector', 'camera'], category: 'hazardous', weight: 1.0 },
   { keywords: ['syringe', 'medicine_chest', 'thermometer', 'stethoscope', 'pill_bottle'], category: 'hazardous', weight: 1.0 },
-  { keywords: ['spray_can', 'lighter', 'fire_extinguisher', 'gasmask'], category: 'hazardous', weight: 0.9 },
-  { keywords: ['power_drill', 'electric_fan', 'space_heater', 'toaster', 'microwave', 'washer', 'dishwasher', 'iron'], category: 'hazardous', weight: 0.8 },
+  { keywords: ['spray_can', 'lighter', 'fire_extinguisher', 'gasmask', 'battery'], category: 'hazardous', weight: 0.9 },
+  { keywords: ['power_drill', 'electric_fan', 'space_heater', 'toaster', 'microwave', 'washer', 'dishwasher', 'iron', 'vacuum'], category: 'hazardous', weight: 0.8 },
+  { keywords: ['refrigerator', 'oven', 'stove', 'television', 'keyboard', 'mouse', 'printer', 'radio', 'CD_player'], category: 'hazardous', weight: 0.85 },
+  { keywords: ['hair_dryer', 'flashlight', 'digital_clock', 'vending_machine', 'pay_phone'], category: 'hazardous', weight: 0.75 },
 
   // Landfill — mixed / composite / non-recyclable materials
-  { keywords: ['diaper', 'rubber_eraser', 'sandal', 'shoe', 'running_shoe', 'sock'], category: 'landfill', weight: 0.85 },
-  { keywords: ['styrofoam', 'foam', 'cup', 'coffee_mug', 'paper_cup'], category: 'landfill', weight: 0.5 }, // often unrecyclable coated cups
+  { keywords: ['diaper', 'rubber_eraser', 'sandal', 'shoe', 'running_shoe', 'sock', 'slipper', 'boot'], category: 'landfill', weight: 0.85 },
+  { keywords: ['styrofoam', 'foam', 'coffee_mug', 'paper_cup'], category: 'landfill', weight: 0.5 },
   { keywords: ['wrapper', 'candy', 'chocolate', 'plastic_wrap'], category: 'landfill', weight: 0.7 },
   { keywords: ['broom', 'mop', 'toothbrush', 'hairbrush', 'rubber_glove'], category: 'landfill', weight: 0.75 },
   { keywords: ['napkin', 'tissue', 'paper_towel_used'], category: 'landfill', weight: 0.4 },
+  { keywords: ['backpack', 'handbag', 'purse', 'suitcase', 'umbrella', 'tie', 'scarf'], category: 'landfill', weight: 0.65 },
+  { keywords: ['T_shirt', 'sweater', 'jean', 'jersey', 'gown', 'coat', 'vest'], category: 'landfill', weight: 0.6 },
 ]
 
 function normalize(str) {
@@ -80,7 +88,6 @@ function normalize(str) {
  */
 export function classifyPredictions(predictions) {
   const scores = { recyclable: 0, compost: 0, landfill: 0, hazardous: 0 }
-  let matchedLabel = predictions[0]?.className ?? 'unknown object'
   let bestSingleHit = { score: 0, category: null, keyword: null, prob: 0 }
 
   for (const pred of predictions) {

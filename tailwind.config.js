@@ -63,6 +63,18 @@ export default {
           '0%': { transform: 'translateY(-100%)' },
           '100%': { transform: 'translateY(100%)' },
         },
+        fadeUp: {
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        shimmer: {
+          '0%': { backgroundPosition: '-200% 0' },
+          '100%': { backgroundPosition: '200% 0' },
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-8px)' },
+        },
       },
       animation: {
         drop: 'drop 0.6s cubic-bezier(0.34,1.56,0.64,1) forwards',
@@ -70,6 +82,9 @@ export default {
         belt: 'beltMove 1s linear infinite',
         pulseGlow: 'pulseGlow 2s ease-in-out infinite',
         scan: 'scan 1.8s ease-in-out infinite',
+        'fade-up': 'fadeUp 0.7s ease-out forwards',
+        shimmer: 'shimmer 3s linear infinite',
+        float: 'float 4s ease-in-out infinite',
       },
     },
   },
